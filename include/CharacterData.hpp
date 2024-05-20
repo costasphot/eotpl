@@ -28,8 +28,10 @@ public:
 
   // Inline Getters
   std::string GetName() const;
-  std::uint8_t GetRace() const;
-  std::uint8_t GetClassType() const;
+  std::uint8_t GetRaceIndex() const;
+  std::string GetRace() const;
+  std::uint8_t GetClassTypeIndex() const;
+  std::string GetClassType() const;
   std::uint8_t GetLevel() const;
   std::uint16_t GetHealth() const;
   std::uint16_t GetMana() const;
@@ -86,12 +88,20 @@ inline std::string CharacterData::GetName() const {
   return m_name;
 }
 
-inline std::uint8_t CharacterData::GetRace() const {
+inline std::uint8_t CharacterData::GetRaceIndex() const {
   return m_data & 0x1F;
 }
 
-inline std::uint8_t CharacterData::GetClassType() const {
+inline std::string CharacterData::GetRace() const {
+  return m_game_data.races[GetRaceIndex()];
+}
+
+inline std::uint8_t CharacterData::GetClassTypeIndex() const {
   return (m_data >> 5) & 0x1F;
+}
+
+inline std::string CharacterData::GetClassType() const {
+  return m_game_data.classes[GetClassTypeIndex()];
 }
 
 inline std::uint8_t CharacterData::GetLevel() const {

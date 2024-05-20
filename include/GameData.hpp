@@ -3,22 +3,21 @@
 #define GAMEDATA_HPP
 
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <array>
-#include <filename>
+#include <filesystem>
 #include "pugixml.hpp"
 
 constexpr std::size_t MAX_RACES{ 12 };
 constexpr std::size_t MAX_CLASSES{ 14 };
 
-enum class ReadFileStatus {
-  SUCCESS,
-  FILE_NOT_FOUND,
-  INVALID_FORMAT,
-  TOO_MANY_ITEMS,
-  EMPTY_ITEM,
-  UNKNOWN_ERROR
+enum class ReadFileStatus : int {
+  SUCCESS = 0x0,
+  FILE_NOT_FOUND = 0x1,
+  INVALID_FORMAT = 0x2,
+  TOO_MANY_ITEMS = 0x3,
+  EMPTY_ITEM = 0x4,
+  UNKNOWN_ERROR = -1
 };
 
 struct GameData {

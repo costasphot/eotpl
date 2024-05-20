@@ -55,13 +55,13 @@ ReadFileStatus GameData::LoadFromFile(const std::string& filename, std::array<st
 // Specialized template for MAX_RACES
 template <>
 ReadFileStatus GameData::LoadFromFile<MAX_RACES>(const std::string& filename, std::array<std::string, MAX_RACES>& data, std::size_t& count) {
-  return ReadFile("./../races.xml", data, count);
+  return ReadFile("./data/races.xml", data, count);
 }
 
 // Specialized template for MAX_CLASSES
 template <>
 ReadFileStatus GameData::LoadFromFile<MAX_CLASSES>(const std::string& filename, std::array<std::string, MAX_CLASSES>& data, std::size_t& count) {
-  return ReadFile("./../classes.xml", data, count);
+  return ReadFile("./data/classes.xml", data, count);
 }
 
 // Explicit template instantiation for the specific sizes used in GameData

@@ -16,4 +16,7 @@
     <Xml Include="data\races.xml" />
     <Xml Include="data\classes.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
 </Project>

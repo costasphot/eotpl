@@ -18,8 +18,8 @@ CharacterData::CharacterData(const GameData& game_data, const std::string& name,
 
 void CharacterData::Print() const {
   std::cout << "Name: " << GetName() << '\n'
-    << "Race: " << m_game_data.races[GetRace()] << '\n'
-    << "Class: " << m_game_data.classes[GetClassType()] << '\n'
+    << "Race: " << GetRace() << '\n'
+    << "Class: " << GetClassType() << '\n'
     << "Level: " << static_cast<int>(GetLevel()) << '\n'
     << "Health: " << static_cast<int>(GetHealth()) << '\n'
     << "Mana: " << static_cast<int>(GetMana()) << '\n';

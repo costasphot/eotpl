@@ -18,3 +18,4 @@
 # Ignore other specific files
 *.log
 *.tmp
+*.aps
