@@ -17,7 +17,7 @@ enum class ReadFileStatus : int {
   INVALID_FORMAT = 0x2,
   TOO_MANY_ITEMS = 0x3,
   EMPTY_ITEM = 0x4,
-  UNKNOWN_ERROR = -1
+  UNKNOWN_ERROR = 0xFFFFFFFF // TODO: see why it doesn't accept it and it rather complains (warning) - put breakpoint on implementation or on definition
 };
 
 struct GameData {

@@ -16,8 +16,12 @@ CharacterData::CharacterData(const GameData& game_data, const std::string& name,
   SetMana(mana);
 }
 
+void CharacterData::SaveCharacter(const std::string& filename) const {
+  // TODO: implement this
+}
+
 void CharacterData::Print() const {
-  std::cout << "Name: " << GetName() << '\n'
+  std::cout << "Name: " << GetName() << '\n' << "test: " << m_game_data.races[static_cast<int>(GetRaceIndex())] << '\n'
     << "Race: " << GetRace() << '\n'
     << "Class: " << GetClassType() << '\n'
     << "Level: " << static_cast<int>(GetLevel()) << '\n'

@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="include\CharacterData.hpp" />
     <ClInclude Include="include\GameData.hpp" />
+    <ClInclude Include="include\GlobalConfig.hpp" />
     <ClInclude Include="include\pugiconfig.hpp" />
     <ClInclude Include="include\pugixml.hpp" />
   </ItemGroup>

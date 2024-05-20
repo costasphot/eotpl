@@ -1,5 +1,6 @@
 // GameData.cpp
 #include "./../GameData.hpp"
+#include "./../GlobalConfig.hpp"
 
 GameData::GameData() {
   PrintWorkingDirectory(); // Print the current working directory for debugging
@@ -33,6 +34,9 @@ ReadFileStatus GameData::ReadFile(const std::string& filename, std::array<std::s
     if (count < data.size()) {
       if (const char* value = item.child_value()) {
         data[count++] = value;
+        if (GlobalConfig::DEVELOPER_MODE) {
+          std::cout << "Successfully parsed item " << count + 1 << " from " << filename << std::endl; // TODO: find why it doesn't work (something with .xml format/functions?)
+        }
       } else {
         std::cerr << "Error: Empty <item> found in " << filename << std::endl;
         return ReadFileStatus::EMPTY_ITEM;

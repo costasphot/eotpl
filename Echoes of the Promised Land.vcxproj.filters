@@ -11,6 +11,7 @@
     <ClInclude Include="include\CharacterData.hpp" />
     <ClInclude Include="include\pugiconfig.hpp" />
     <ClInclude Include="include\pugixml.hpp" />
+    <ClInclude Include="include\GlobalConfig.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="data\races.xml" />

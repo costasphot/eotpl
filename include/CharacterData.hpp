@@ -38,17 +38,21 @@ public:
 
   // Member Functions
   void Print() const;
+  void SaveCharacter(const std::string& filename) const;
 
 private:
   const GameData& m_game_data;
+  const std::string filename;
   std::string m_name;
   std::uint32_t m_data; // First 32 bits for race, class, level, health
   std::uint16_t m_mana_data; // Additional 16 bits for mana
 
-  static constexpr std::uint32_t m_race_mask{ 0x1F };
-  static constexpr std::uint32_t m_class_type_mask{ 0x1F << 5 };
-  static constexpr std::uint32_t m_level_mask{ 0x3F << 10 };
-  static constexpr std::uint32_t m_health_mask{ 0xFFFFU << 16 };
+  struct Mask {
+    static constexpr std::uint32_t kRace{ 0x1F };
+    static constexpr std::uint32_t kClassType{ 0x1F << 5 };
+    static constexpr std::uint32_t kLevel{ 0x3F << 10 };
+    static constexpr std::uint32_t kHealth{ 0xFFFFU << 16 };
+  };
   // Narrowing conversion rule:
   // Prevents certain implicit type conversions that can lose information, such as converting from a
   // larger integer type to a smaller one, or from a signed type to an unsigned type where the value
@@ -64,19 +68,19 @@ inline void CharacterData::SetName(const std::string& name) {
 }
 
 inline void CharacterData::SetRace(std::uint8_t race) {
-  m_data = (m_data & ~m_race_mask) | (race & 0x1F);
+  m_data = (m_data & ~Mask::kRace) | (race & 0x1F);
 }
 
 inline void CharacterData::SetClassType(std::uint8_t class_type) {
-  m_data = (m_data & ~m_class_type_mask) | ((class_type & 0x1F) << 5);
+  m_data = (m_data & ~Mask::kClassType) | ((class_type & 0x1F) << 5);
 }
 
 inline void CharacterData::SetLevel(std::uint8_t level) {
-  m_data = (m_data & ~m_level_mask) | ((level & 0x1F) << 10);
+  m_data = (m_data & ~Mask::kLevel) | ((level & 0x1F) << 10);
 }
 
 inline void CharacterData::SetHealth(std::uint16_t health) {
-  m_data = (m_data & ~m_health_mask) | ((health & 0x1F) << 16);
+  m_data = (m_data & ~Mask::kHealth) | ((health & 0x1F) << 16);
 }
 
 inline void CharacterData::SetMana(std::uint16_t mana) {
@@ -89,7 +93,7 @@ inline std::string CharacterData::GetName() const {
 }
 
 inline std::uint8_t CharacterData::GetRaceIndex() const {
-  return m_data & 0x1F;
+  return m_data & Mask::kRace;
 }
 
 inline std::string CharacterData::GetRace() const {
