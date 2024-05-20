@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <races>
+    <race>Human</race>
+    <race>Elf</race>
+    <race>Dwarf</race>
+    <race>Orc</race>
+    <race>Halfling</race>
+    <race>Gnome</race>
+    <race>Troll</race>
+    <race>Dragonborn</race>
+    <race>Fairy</race>
+    <race>Undead</race>
+    <race>Merfolk</race>
+    <race>Elemental</race>
+  </races>
+</data>

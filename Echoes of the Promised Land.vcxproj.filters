@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\GameData.cpp" />
+    <ClCompile Include="src\CharacterData.cpp" />
+    <ClCompile Include="src\pugixml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\GameData.hpp" />
+    <ClInclude Include="include\CharacterData.hpp" />
+    <ClInclude Include="include\pugiconfig.hpp" />
+    <ClInclude Include="include\pugixml.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="data\races.xml" />
+    <Xml Include="data\classes.xml" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+# Ignore build output
+/bin/
+/obj/
+
+# Ignore dependency directories
+/node_modules/
+/.gradle/
+/.idea/
+/.vscode/
+
+# Ignore IDE-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pdb
+
+# Ignore other specific files
+*.log
+*.tmp

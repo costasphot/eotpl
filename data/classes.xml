@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <classes>
+    <class>Warrior</class>
+    <class>Rogue</class>
+    <class>Archer</class>
+    <class>Mage</class>
+    <class>Cleric</class>
+    <class>Paladin</class>
+    <class>Bard</class>
+    <class>Monk</class>
+    <class>Sorcerer</class>
+    <class>Druid</class>
+    <class>Barbarian</class>
+    <class>Ranger</class>
+    <class>Warlock</class>
+    <class>Necromancer</class>
+  </classes>
+</data>
